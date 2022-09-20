@@ -1,7 +1,8 @@
 module.exports = {
-    name: 'ready',
-    once: true,
-    async execute(client) {
-        console.log(`Ready!!! ${client.user.tag} is logged in and online.`);
-    }
-}
+  name: "ready",
+  once: true,
+  async execute(client) {
+    setInterval(client.pickPresence, 10 * 1000);
+    console.log(`${client.user.tag} has logged into Discord!`);
+  },
+};

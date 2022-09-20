@@ -22,11 +22,11 @@ module.exports = (client) => {
     const guildId = "98514285625368576";
     const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_TOKEN);
     try {
-      console.log("Started refreshing applicaiton (/) commands.");
+      console.log("Started refreshing application (/) commands.");
       await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
         body: client.commandArray,
       });
-      console.log("Successfully reloaded applicaiton (/) commands.");
+      console.log("Successfully reloaded application (/) commands.");
     } catch (error) {
       console.error(error);
     }
